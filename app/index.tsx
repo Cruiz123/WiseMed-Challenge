@@ -20,7 +20,7 @@ const PatientCard = () => {
   const [urgencyTypes, setUrgencyTypes] = useState<
     { id: number; name: string }[]
   >([]);
-  const [selectedUrgency, setSelectedUrgency] = useState<string>("");
+  const [selectedUrgency, setSelectedUrgency] = useState<number>();
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const PatientCard = () => {
         right={() => <Image source={JoinBoneIcon} style={styles.iconImage} />}
       />
       <Divider />
-      <Card.Content>
+      <Card.Content style={{ marginTop: 12 }}>
         <View style={styles.row}>
           <Image source={Avatar} style={styles.avatar} />
           <View>
@@ -134,6 +134,8 @@ const styles = StyleSheet.create({
   card: {
     width: "100%",
     borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#0057D9",
     overflow: "hidden",
     elevation: 4,
     marginBottom: 15,
@@ -142,11 +144,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#0057D9",
   },
   cardTitle: {
+    fontSize: 18,
     color: "#fff",
     fontWeight: "bold",
   },
   cardSubtitle: {
     color: "#fff",
+    fontSize: 16,
   },
   iconImage: {
     width: 50,
@@ -171,12 +175,15 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   label: {
-    fontSize: 12,
+    fontSize: 14,
+    lineHeight: 18,
     marginBottom: 4,
+    color: "#000",
   },
   bold: {
     color: "#154FBF",
-    fontWeight: "bold",
+    fontWeight: "regular",
+    fontSize: 14,
   },
   iconsRow: {
     flexDirection: "row",

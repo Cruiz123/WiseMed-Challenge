@@ -5,7 +5,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 
 interface DropdownComponentProps {
   data: { id: number; name: string }[];
-  selectValue: number; // Cambiado de string a number para que sea coherente con los valores
+  selectValue: number | undefined; // Cambiado de string a number para que sea coherente con los valores
   setSelectValue: (value: number) => void; // Asegurar que el valor sea un número
 }
 
