@@ -66,7 +66,7 @@ const PatientCard = () => {
         right={() => <Image source={JoinBoneIcon} style={styles.iconImage} />}
       />
       <Divider />
-      <Card.Content style={{ marginTop: 12 }}>
+      <Card.Content style={{ marginTop: 12, backgroundColor: "white" }}>
         <View style={styles.row}>
           <Image source={Avatar} style={styles.avatar} />
           <View>
@@ -100,8 +100,6 @@ const PatientCard = () => {
       </Card.Content>
 
       <Card.Content style={styles.urgencyCard}>
-        <Text style={styles.bold}>Tipo de Urgencia</Text>
-
         {loading ? (
           <ActivityIndicator size="large" color="#0057D9" />
         ) : (
@@ -139,6 +137,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     elevation: 4,
     marginBottom: 15,
+    backgroundColor: "white",
   },
   cardHeader: {
     backgroundColor: "#0057D9",
@@ -195,6 +194,7 @@ const styles = StyleSheet.create({
   },
   urgencyCard: {
     marginTop: 10,
+    backgroundColor: "white",
   },
 });
 

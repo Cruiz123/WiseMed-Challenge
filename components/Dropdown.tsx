@@ -23,14 +23,9 @@ const DropdownComponent = ({
   }));
 
   const renderLabel = () => {
-    if (selectValue || isFocus) {
-      return (
-        <Text style={[styles.label, { color: "#0057D9" }]}>
-          Tipo de Urgencia
-        </Text>
-      );
-    }
-    return null;
+    return (
+      <Text style={[styles.label, { color: "#0057D9" }]}>Tipo de Urgencia</Text>
+    );
   };
 
   const renderItem = (item: { label: string; value: number }) => (
