@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
+import { DropdownComponentProps } from "@/types/interfaces";
 import AntDesign from "@expo/vector-icons/AntDesign";
-
-interface DropdownComponentProps {
-  data: { id: number; name: string }[];
-  selectValue: number | undefined; // Cambiado de string a number para que sea coherente con los valores
-  setSelectValue: (value: number) => void; // Asegurar que el valor sea un número
-}
 
 const DropdownComponent = ({
   data,
@@ -16,7 +11,6 @@ const DropdownComponent = ({
 }: DropdownComponentProps) => {
   const [isFocus, setIsFocus] = useState(false);
 
-  // Transformamos los datos para hacerlos compatibles con el Dropdown
   const transformedData = data.map((item) => ({
     label: item.name,
     value: item.id,
@@ -48,8 +42,8 @@ const DropdownComponent = ({
         iconStyle={styles.iconStyle}
         data={transformedData}
         maxHeight={300}
-        labelField="label" // Cambiado de selectValue a "label" para claridad
-        valueField="value" // Cambiado de selectValue a "value"
+        labelField="label"
+        valueField="value"
         placeholder={
           !selectValue
             ? "Seleccionar"
@@ -58,7 +52,7 @@ const DropdownComponent = ({
         value={selectValue}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
-        onChange={(item) => setSelectValue(item.value)} // Cambiado a item.value para seleccionar el ID
+        onChange={(item) => setSelectValue(item.value)}
         renderItem={renderItem}
       />
     </View>
